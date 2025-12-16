@@ -33,9 +33,9 @@ const ReviewPage = () => {
   }
   return (
     <div>
-        <h1 className=" text-3xl font-bold my-9">Total Review <span className=" text-yellow-500">{review.length}</span></h1>
+        <h1 className=" text-3xl font-bold my-9">Total Review <span className=" text-yellow-500">{review?.length}</span></h1>
       <div className=" my-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9">
-        {review.map((revew) => (
+        {review?.map((revew) => (
           <ReviewCrad revew={revew} key={revew.id}></ReviewCrad>
         ))}
       </div>
