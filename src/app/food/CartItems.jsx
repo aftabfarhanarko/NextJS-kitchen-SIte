@@ -11,7 +11,12 @@ const CartItems = () => {
     <div>
       {card.length} Item ADd
       {card?.map((one) => {
-       one?.title
+        <div>
+         {one?.title}
+
+         <img src={one.foodImg}></img>
+
+       </div>
       })}
     </div>
   );

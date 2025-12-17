@@ -10,10 +10,10 @@ const InputSearchFiled = () => {
         e.preventDefault();
         const from = e.target;
         const value = from.texts.value;
-          const newParams = new URLSearchParams (params.toString())
+        const newParams = new URLSearchParams (params.toString())
         newParams.set("search", value)
         router.push(`?${newParams.toString()}`)
-        console.log(newParams);
+        
     }
     return (
         <div>

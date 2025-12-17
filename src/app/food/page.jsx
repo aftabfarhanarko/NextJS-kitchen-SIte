@@ -36,7 +36,7 @@ const FoodPage = async ({searchParams}) => {
             <h1 className=" text-3xl font-semibold ">
               This is Card Handel Now
             </h1>
-            <CartItems></CartItems>
+           <CartItems></CartItems>
           </div>
         </div>
       </div>
