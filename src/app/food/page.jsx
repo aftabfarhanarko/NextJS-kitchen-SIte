@@ -1,5 +1,4 @@
 import Cards from "@/components/Cards";
-import React, { useContext } from "react";
 import CartItems from "./CartItems";
 import InputSearchFiled from "@/components/InputSearchFiled";
 const getFoods = async (search) => {
@@ -10,6 +9,14 @@ const getFoods = async (search) => {
   const resa = await res.json();
   return resa.foods;
 };
+export const metadata = {
+  // title: "All Food",
+ title:{
+    default:"All Food",
+ },
+  description: "All Foods in Our Resturent",
+};
+
 
 const FoodPage = async ({searchParams}) => {
   const {search=" "} = await searchParams;
