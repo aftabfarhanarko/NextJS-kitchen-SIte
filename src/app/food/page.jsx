@@ -1,22 +1,30 @@
 import Cards from "@/components/Cards";
 import React, { useContext } from "react";
 import CartItems from "./CartItems";
-const getFoods = async () => {
+import InputSearchFiled from "@/components/InputSearchFiled";
+const getFoods = async (search) => {
   const res = await fetch(
-    `https://taxi-kitchen-api.vercel.app/api/v1/foods/random`
+    `https://taxi-kitchen-api.vercel.app/api/v1/foods/random?search=${search}`
+     ,{next: {revalidate:10}}
   );
   const resa = await res.json();
   return resa.foods;
 };
 
-const FoodPage = async () => {
-  const foosdsds = await getFoods();
+const FoodPage = async ({searchParams}) => {
+  const {search=" "} = await searchParams;
+  console.log(search);
+  
+  const foosdsds = await getFoods(search);
 
   return (
     <div>
       <h1 className=" my-10 text-3xl font-bold">
-        {/* Total Foods <sapn className="text-yellow-500"> {foosdsds?.length}</sapn> */}
+        Total Foods <sapn className="text-yellow-500"> {foosdsds?.length}</sapn>
       </h1>
+      <div className=" my-10">
+        <InputSearchFiled></InputSearchFiled>
+      </div>
       <div className=" flex gap-5">
         <div className="flex-1 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-4 gap-5">
           {foosdsds?.map((food) => (
