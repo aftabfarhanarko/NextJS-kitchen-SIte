@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const ReviewCrad = ({ revew }) => {
@@ -53,11 +54,21 @@ const ReviewCrad = ({ revew }) => {
           {/* Profile Photo */}
           <div className="relative flex-shrink-0">
             <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-amber-500/20 group-hover:ring-amber-500/40 transition-all duration-300">
-              <img
+              {/* <img
                 src={photo}
                 alt={user}
                 className="w-full h-full object-cover"
-              />
+              /> */}
+
+              <Image
+              src={photo}
+              alt={user}
+              className=" object-cover"
+              width={500}
+              height={400}
+              >
+
+              </Image>
             </div>
             {/* Verified Badge */}
             <div className="absolute -bottom-1 -right-1 bg-gradient-to-br from-green-400 to-green-600 rounded-full p-1 shadow-lg">

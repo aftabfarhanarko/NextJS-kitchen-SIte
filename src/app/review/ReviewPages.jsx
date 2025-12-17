@@ -2,7 +2,13 @@
 import ReviewCrad from "@/components/ReviewCrad";
 import React, { useEffect, useState } from "react";
 import ReviewLoding from "./ReviewLoding";
+import { Anek_Odia, Roboto } from "next/font/google";
 
+
+const roboto = Roboto ({
+  weight:["400", "600", "700"],
+  subsets:["latin"]
+}) 
 
 const ReviewPage = () => {
 
@@ -34,7 +40,7 @@ const ReviewPage = () => {
     return <ReviewLoding></ReviewLoding>;
   }
   return (
-    <div>
+    <div className={roboto.className}>
       <h1 className=" text-3xl font-bold my-9">
         Total Review <span className=" text-yellow-500">{review?.length}</span>
       </h1>
