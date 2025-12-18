@@ -8,7 +8,7 @@ export function proxy(request) {
         return NextResponse.json({
             status:4404
         })
-    }werwefwefgwefg 234gwefg
+    }
     
   return NextResponse.redirect(new URL('/home', request.url))
 }

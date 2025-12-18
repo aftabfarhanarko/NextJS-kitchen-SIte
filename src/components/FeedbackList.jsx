@@ -20,9 +20,9 @@ const FeedbackList = ({ feedback, onUpdate, onDelete }) => {
         </span>
       </div>
 
-      <p className="italic text-gray-700 mb-6">"{feedback.message}"</p>
+      <p className="italic text-gray-700 mb-6">{feedback.message}</p>
 
-      <p className="text-gray-500 text-sm mb-6">Date: {feedback.date}</p>
+      <p className="text-gray-500 text-sm mb-6">Date: {new Date(feedback.date).toLocaleTimeString()}</p>
 
       <div className="flex space-x-4">
         <button

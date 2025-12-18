@@ -5,10 +5,11 @@ import React from "react";
 export const metadata = {
     title:"FeedBack"
 }
+export const dynamic = "force-dynamic";
 
 const feedbackdata = async () => {
-  const res = await fetch("http://localhost:3000/api/feedback/",{
-    cache:"force-cache" ,
+  const res = await fetch(`${process.env.NEXT_PUBLIC_server}/api/feedback/`,{
+    // cache:"force-cache" ,
     next:{revalidate: 60}
   });
   const result = await res.json();
