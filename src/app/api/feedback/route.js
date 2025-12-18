@@ -8,7 +8,7 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-  const { message } = await request.json();
+  const { message , user , status } = await request.json();
   if (!message || typeof message !== "string") {
     return Response.json({
       status: 400,
@@ -16,7 +16,7 @@ export async function POST(request) {
     });
   }
 
-  const newFeedBack = { message, date: new Date().toISOString() };
+  const newFeedBack = { message,user , status,date: new Date().toISOString() };
   const result = await feedbackCollections.insertOne(newFeedBack);
   revalidatePath("/feedback");
   return Response.json(result);

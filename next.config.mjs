@@ -17,6 +17,16 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/food-detlise/:id",
+        destination: "/food/:id",
+        permanent: true,
+      },
+    ];
+  },
+
   reactCompiler: true,
 };
 

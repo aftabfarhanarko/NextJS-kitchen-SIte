@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React from "react";
 export function generateStaticParams() {
   return [{ id: "52834" }, { id: "52768" }, { id: "52937" }];
@@ -37,9 +38,13 @@ const getSingelFood = async (id) => {
 };
 const Detlisepage = async ({ params }) => {
   const { id } = await params;
-  const { title, category, area, price, foodImg, video } = await getSingelFood(
-    id
-  );
+  const fooda = await getSingelFood(id);
+  if(!fooda.title){
+    redirect("/food")
+    // return <div className=" text-2xl font-semibold text-red-500 flex min-h-screen justify-center items-center">Pages Not Found ❌ </div>
+  }
+
+  const { title, category, area, price, foodImg, video } = fooda;
   // console.log(detlise);
   const getYouTubeId = (url) => {
     const regExp =
