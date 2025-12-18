@@ -2,8 +2,15 @@ import FeedbackList from "@/components/FeedbackList";
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+    title:"FeedBack"
+}
+
 const feedbackdata = async () => {
-  const res = await fetch("http://localhost:3000/api/feedback/");
+  const res = await fetch("http://localhost:3000/api/feedback/",{
+    cache:"force-cache" ,
+    next:{revalidate: 60}
+  });
   const result = await res.json();
   return result;
 };

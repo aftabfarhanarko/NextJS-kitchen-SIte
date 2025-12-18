@@ -2,27 +2,36 @@
 const FeedbackAddForm = () => {
   const handelSUbmite = async (e) => {
     e.preventDefault();
+
     const user = e.target.name.value;
     const status = e.target.status.value;
     const message = e.target.textarea.value;
-    console.log(name, status, message);
+
+    console.log(user, status, message);
+
     const data = {
       user,
       status,
       message,
     };
 
-    const res = fetch("http://localhost:3000/api/feedback/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch("http://localhost:3000/api/feedback/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    const resAS = async (await res).json();
-    console.log(resAS);
-    
+      const resAS = await res.json();
+      if (resAS.acknowledged) {
+        console.log(resAS);
+        alert("Successfully Add Your Feedback");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -138,18 +147,18 @@ const FeedbackAddForm = () => {
           className="w-full flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
         >
           <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                viewBox="0 0 24 24"
-              >
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-              Submit Feedback
+            className="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            viewBox="0 0 24 24"
+          >
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          Submit Feedback
         </button>
 
         {/* Footer Text */}
