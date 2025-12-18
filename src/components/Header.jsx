@@ -1,5 +1,5 @@
 "use client";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -19,35 +19,41 @@ const Header = () => {
             href="/"
             className="flex-shrink-0 transition-transform hover:scale-105 duration-300"
           >
-            {/* <Image 
+            <Image 
                 src="/logo.jpg" 
               alt="Smokehouse BBQ" 
               width={64}
               height={64}
               className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-amber-500 shadow-lg object-cover"
               priority
-            /> */}
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
             <Link
               href="/food"
-              className="px-4 lg:px-6 py-2 lg:py-3 text-white font-semibold text-base lg:text-lg rounded-lg hover:bg-amber-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+              className="px-4 lg:px-6 py-2  text-white font-semibold text-base lg:text-lg rounded-lg bg-amber-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
             >
-              Food
+             🍽️ Food
             </Link>
             <Link
               href="/sells"
-              className="px-4 lg:px-6 py-2 lg:py-3 text-white font-semibold text-base lg:text-lg rounded-lg hover:bg-amber-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+              className="px-4 lg:px-6 py-2  text-white font-semibold text-base lg:text-lg rounded-lg bg-amber-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
             >
-              Sells
+              💰 Sells
             </Link>
             <Link
               href="/review"
-              className="px-4 lg:px-6 py-2 lg:py-3 text-white font-semibold text-base lg:text-lg rounded-lg hover:bg-amber-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+              className="px-4 lg:px-6 py-2  text-white font-semibold text-base lg:text-lg rounded-lg bg-amber-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
             >
-              Review
+             ⭐ Review
+            </Link>
+            <Link
+              href="/feedback"
+              className="px-4 lg:px-6 py-2  text-white font-semibold text-base lg:text-lg rounded-lg bg-amber-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+            >
+             🚆 Feed Back
             </Link>
           </nav>
 
@@ -103,6 +109,12 @@ const Header = () => {
             >
               ⭐ Review
             </Link>
+            <Link
+              href="/feedback"
+              className="px-4 lg:px-6 py-2  text-white font-semibold text-base lg:text-lg rounded-lg hover:bg-amber-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+            >
+             🚆 Feed Back
+            </Link> 
           </nav>
         </div>
       </div>
