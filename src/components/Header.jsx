@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -19,14 +19,14 @@ const Header = () => {
             href="/"
             className="flex-shrink-0 transition-transform hover:scale-105 duration-300"
           >
-            <Image 
+            {/* <Image 
                 src="/logo.jpg" 
               alt="Smokehouse BBQ" 
               width={64}
               height={64}
               className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-amber-500 shadow-lg object-cover"
               priority
-            />
+            /> */}
           </Link>
 
           {/* Desktop Navigation */}
